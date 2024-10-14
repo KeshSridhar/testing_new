@@ -37,7 +37,7 @@ with tempfile.TemporaryDirectory() as tempdir:
     })
 
     # chromium -- no need to specify path
-    driver = webdriver.Chrome(ChromeDriverManager().install(),options=options)
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=options)
     
     driver.implicitly_wait(10)
 
