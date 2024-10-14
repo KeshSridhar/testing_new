@@ -1,0 +1,4 @@
+stac_utils_python @ git+https://github.com/stac-labs/stac-utils-python.git@v0.2.1
+pandas==2.1.1
+selenium==4.14.0
+fs==2.4.16
