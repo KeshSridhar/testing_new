@@ -16,7 +16,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import re
 import datetime
 import tempfile
-import chromedriver_autoinstaller
+from webdriver_manager.chrome import ChromeDriverManager
 
 # get client
 client = google.auth_bq()
@@ -31,15 +31,14 @@ options = Options()
 # # headless browser
 options.add_argument("--headless=new")
 
-chromedriver_autoinstaller.install()
-
 with tempfile.TemporaryDirectory() as tempdir:
     options.add_experimental_option("prefs", {
         "download.default_directory": f"{tempdir}"
     })
 
     # chromium -- no need to specify path
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(),options=options)
+    
     driver.implicitly_wait(10)
 
     driver.get("https://www.mec.mo.gov/MEC/Campaign_Finance/CF_ContrCSV.aspx")
