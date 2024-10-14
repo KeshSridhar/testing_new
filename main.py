@@ -17,6 +17,8 @@ import re
 import datetime
 import tempfile
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.core.os_manager import ChromeType
 
 # get client
 client = google.auth_bq()
