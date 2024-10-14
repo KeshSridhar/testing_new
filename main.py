@@ -58,8 +58,6 @@ with tempfile.TemporaryDirectory() as tempdir:
     # get name of downloaded file
     filename = os.listdir(f"{relative_path}")[0]
 
-
-
     # get dataframe of the latest file
     df_current_file = pd.read_csv(f'{relative_path}{filename}',sep=',', dtype=str, on_bad_lines='warn')
 
