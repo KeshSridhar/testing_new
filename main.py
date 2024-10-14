@@ -16,10 +16,6 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import re
 import datetime
 import tempfile
-import warnings
-
-warnings.filterwarnings("ignore", message="numpy.dtype size changed")
-warnings.filterwarnings("ignore", message="numpy.ufunc size changed")
 
 # get client
 client = google.auth_bq()
