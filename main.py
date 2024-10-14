@@ -17,6 +17,10 @@ from dotenv import load_dotenv
 import re
 import datetime
 import tempfile
+import warnings
+
+warnings.filterwarnings("ignore", message="numpy.dtype size changed")
+warnings.filterwarnings("ignore", message="numpy.ufunc size changed")
 
 # get client
 client = google.auth_bq()
