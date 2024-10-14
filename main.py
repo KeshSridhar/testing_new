@@ -16,6 +16,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import re
 import datetime
 import tempfile
+import chromedriver_autoinstaller
 
 # get client
 client = google.auth_bq()
@@ -29,6 +30,8 @@ options = Options()
 
 # # headless browser
 options.add_argument("--headless=new")
+
+chromedriver_autoinstaller.install()
 
 with tempfile.TemporaryDirectory() as tempdir:
     options.add_experimental_option("prefs", {
